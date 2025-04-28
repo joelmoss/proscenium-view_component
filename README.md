@@ -1,5 +1,7 @@
 # Proscenium::ViewComponent
 
+Enhances [ViewComponent](https://viewcomponent.org/) by integrating it with the [Proscenium](https://proscenium.rocks/) framework. It supports automatic side-loading of assets, and CSS Modules for scoped styling.
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -16,7 +18,46 @@ gem install proscenium-view_component
 
 ## Usage
 
-TODO: Write usage instructions here
+Simply write your ViewComponent classes and inherit from `Proscenium::ViewComponent::Base`.
+
+```ruby
+class MyView < Proscenium::ViewComponent::Base
+  def call
+    tag.h1 'Hello World'
+  end
+end
+```
+
+### Side-loading
+
+Any ViewComponent class that inherits `Proscenium::ViewComponent::Base` will automatically be [side-loaded](https://github.com/joelmoss/proscenium?tab=readme-ov-file#side-loading).
+
+### CSS Modules
+
+[CSS Modules](https://github.com/joelmoss/proscenium?tab=readme-ov-file#css-modules) are fully supported in ViewComponent classes, with access to the [`css_module` helper](https://github.com/joelmoss/proscenium?tab=readme-ov-file#in-your-views) if you need it.
+
+```ruby
+# /app/components/user_component.rb
+class UserComponent < Proscenium::ViewComponent::Base
+  def view_template
+    div.h1 @user.name, class: css_module(:user_name)
+  end
+end
+```
+
+```css
+/* # /app/components/user_component.module.css */
+.userName {
+  color: red;
+  font-size: 50px;
+}
+```
+
+The view above will be rendered something like this:
+
+```html
+<h1 class="user_name-ABCD1234">Joel Moss</h1>
+```
 
 ## Development
 
