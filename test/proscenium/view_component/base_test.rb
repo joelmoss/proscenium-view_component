@@ -7,9 +7,10 @@ class Proscenium::ViewComponent::BaseTest < ViewComponent::TestCase
   test 'side loads component js and css' do
     render_inline RegularComponent.new
 
-    assert_equal({
-                   '/app/components/regular.js' => {},
-                   '/app/components/regular.css' => {}
-                 }, Proscenium::Importer.imported)
+    path = '/node_modules/@rubygems/proscenium-view_component/test/dummy/app/components'
+    assert_equal([
+                   "#{path}/regular_component.js",
+                   "#{path}/regular_component.css"
+                 ], Proscenium::Importer.imported.keys)
   end
 end

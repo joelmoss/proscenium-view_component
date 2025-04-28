@@ -4,7 +4,8 @@ require 'test_helper'
 
 class Proscenium::ViewComponent::ReactComponentTest < ViewComponent::TestCase
   let(:selector) do
-    '[data-proscenium-component-path="/app/components/react_component.jsx"]'
+    path = '/node_modules/@rubygems/proscenium-view_component/test/dummy/app/components'
+    "[data-proscenium-component-path='#{path}/react_component.jsx']"
   end
 
   it 'has data-proscenium-component attribute' do

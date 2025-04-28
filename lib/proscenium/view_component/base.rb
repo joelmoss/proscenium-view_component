@@ -3,6 +3,7 @@
 module Proscenium::ViewComponent
   class Base < ::ViewComponent::Base
     include Proscenium::SourcePath
+    include CssModules
 
     class_attribute :sideload_assets_options
 
