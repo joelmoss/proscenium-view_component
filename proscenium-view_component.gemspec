@@ -32,5 +32,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'proscenium', '~> 0.19.0'
   spec.add_dependency 'rails', ['>= 7.1.0', '< 9.0']
-  spec.add_dependency 'view_component', '~> 3.22.0'
+  spec.add_dependency 'view_component', '~> 4.0.1'
 end
