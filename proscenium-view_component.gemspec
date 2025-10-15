@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'proscenium', '~> 0.20.0'
+  spec.add_dependency 'proscenium', '~> 0.21.0'
   spec.add_dependency 'rails', ['>= 7.1.0', '< 9.0']
   spec.add_dependency 'view_component', '~> 4.0.1'
 end
