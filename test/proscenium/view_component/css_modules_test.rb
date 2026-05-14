@@ -12,8 +12,7 @@ class Proscenium::ViewComponent::CssModulesTest < ViewComponent::TestCase
       hsh = Proscenium::Utils.css_module_digest(
         Rails.root.join('app/components/css_module_helper_component.module.css')
       )
-      assert page.has_css?("h1.header_#{hsh}_app-components-css_module_helper_component-module",
-                           text: 'Hello')
+      assert page.has_css?("h1.header_#{hsh}", text: 'Hello')
     end
 
     it 'side loads css module' do
