@@ -2,6 +2,6 @@
 
 module Proscenium
   module ViewComponent
-    VERSION = '0.7.0'
+    VERSION = '0.7.1'
   end
 end
