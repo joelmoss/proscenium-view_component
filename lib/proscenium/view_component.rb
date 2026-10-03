@@ -12,7 +12,6 @@ module Proscenium
 
     autoload :Base
     autoload :Sideload
-    autoload :ReactComponent
     autoload :CssModules
   end
 end
